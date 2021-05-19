@@ -1,30 +1,52 @@
+// 样式
 import styles from './index.less';
-
+// antd 组件
 import { Layout, Menu } from 'antd';
+import { useState, useContext } from 'react';
 
+import { history, Link } from 'umi';
+
+import { itemContext } from '@/layouts/index';
+
+// icon
 import {
   ContactsOutlined,
   ClusterOutlined,
   AlertOutlined,
+  UserAddOutlined,
 } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 
+// ItemSiderProps 函数的porps数据定义
 type ItemSiderProps = {
   isShowSider: boolean;
 };
 
+// 处理添加新用户fn
+const handleUser: () => void = () => {
+  history.push('/newUser');
+};
+
 const ItemSider: React.FC<ItemSiderProps> = (props) => {
   const { isShowSider } = props;
+  const [showBtn, setShowBtn] = useState<boolean>(true);
+
+  const { jurisdiction } = useContext(itemContext);
+
   return (
     <Sider trigger={null} collapsible collapsed={isShowSider}>
       <div className={styles.logo} />
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
         {/* submenu1 */}
         <SubMenu key="sub1" icon={<ContactsOutlined />} title="个人办公">
-          <Menu.Item key="1">我的任务</Menu.Item>
-          <Menu.Item key="2">我发起的流程</Menu.Item>
+          <Menu.Item key="1">
+            <Link to="/">我的任务</Link>
+          </Menu.Item>
+          <Menu.Item key="2">
+            <Link to="/">我发起的流程</Link>
+          </Menu.Item>
           <Menu.Item key="3">我的抄送</Menu.Item>
         </SubMenu>
 
@@ -46,6 +68,14 @@ const ItemSider: React.FC<ItemSiderProps> = (props) => {
           <Menu.Item key="13">我的工单</Menu.Item>
           <Menu.Item key="14">歌单查询</Menu.Item>
         </SubMenu>
+
+        <Menu.Item
+          icon={<UserAddOutlined />}
+          className={jurisdiction === 3 ? styles.show : styles.noshow}
+          onClick={handleUser}
+        >
+          添加用户
+        </Menu.Item>
       </Menu>
     </Sider>
   );

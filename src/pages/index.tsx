@@ -1,16 +1,7 @@
-import styles from './index.less';
+import { Redirect } from 'umi';
 
-function IndexPage(props: any) {
-  const { Children } = props;
-  return (
-    <div>
-      <h1 className={styles.title}>首页</h1>
-      <h2 className="s">hh</h2>
-      <p>{Children}</p>
-    </div>
-  );
-}
+const indexPage: React.FC = (props) => {
+  return <div>{<Redirect to="/personalOffice/mytask" />}</div>;
+};
 
-// IndexPage.wrappers = ['@/routes/isLogin']
-
-export default IndexPage;
+export default indexPage;
