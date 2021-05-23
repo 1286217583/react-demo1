@@ -63,19 +63,19 @@ const columns: {}[] = [
     width: 250,
     align: 'center',
   },
-  // {
-  //   title: '操作',
-  //   dataIndex: 'action',
-  //   fixed: 'right',
-  //   width: 150,
-  //   align: 'center',
-  //   render: () => (
-  //     <div className={styles.action}>
-  //       <button>办理</button> <span></span>
-  //       <button>委托</button>
-  //     </div>
-  //   ),
-  // },
+  {
+    title: '操作',
+    dataIndex: 'action',
+    fixed: 'right',
+    width: 150,
+    align: 'center',
+    render: () => (
+      <div className={styles.action}>
+        <button>办理</button> <span></span>
+        <button>委托</button>
+      </div>
+    ),
+  },
 ];
 
 // data 类型

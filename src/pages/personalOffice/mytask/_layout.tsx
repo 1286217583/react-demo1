@@ -37,7 +37,7 @@ const Mytask: React.FC<myTaskProps> = (props) => {
           </Menu.Item>
 
           <Menu.Item key="2" icon={<TeamOutlined />}>
-            <Link to="/personalOffice/mytask/process">组任务</Link>
+            <Link to="/personalOffice/mytask/teamTask">组任务</Link>
           </Menu.Item>
 
           <Menu.Item key="3" icon={<FieldTimeOutlined />}>

@@ -55,11 +55,11 @@ const ItemSider: React.FC<ItemSiderProps> = (props) => {
           <Menu.Item key="4">出差申请</Menu.Item>
           <Menu.Item key="5">请假申请</Menu.Item>
           <Menu.Item key="6">借款申请</Menu.Item>
-          <Menu.Item key="7">公文发文</Menu.Item>
+          {/* <Menu.Item key="7">公文发文</Menu.Item>
           <Menu.Item key="8">请假审批(自定义)</Menu.Item>
           <Menu.Item key="9">批量申请(自定义)</Menu.Item>
           <Menu.Item key="10">Online会签字流程</Menu.Item>
-          <Menu.Item key="11">Online请假单</Menu.Item>
+          <Menu.Item key="11">Online请假单</Menu.Item> */}
         </SubMenu>
 
         {/* submenu3 */}

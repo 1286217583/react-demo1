@@ -31,11 +31,11 @@ const Login: React.FC<{}> = () => {
         // 保存 data中的 token 到localStorage
         window.localStorage.setItem('token', data.token);
         // 弹窗提示，弹窗结束刷新回到首页
-        message.success('登录成功', 1, () => {
+        message.success(msg, 1, () => {
           window.location.reload();
         });
       } else {
-        message.error('登录失败，请重试', 1, () => {
+        message.error(msg, 1, () => {
           setLoading(false);
         });
       }

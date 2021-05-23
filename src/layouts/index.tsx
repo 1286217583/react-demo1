@@ -59,7 +59,7 @@ const layout: React.FC = (props) => {
 
     if (token) {
       // 获取用户信息
-      axios.get(`${getUser}/${token}`).then(({ data }) => {
+      axios.get(`${getUser}?token=${token}`).then(({ data }) => {
         // 判断是否请求成功
         if (data.code === -1) {
           // 请求失败 弹窗提示
